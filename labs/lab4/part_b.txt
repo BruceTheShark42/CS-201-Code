@@ -1,0 +1,15 @@
+movl (%rcx),-0x18(%rbp)
+	mov cannot move from one address to another address.
+	Side Note:
+		You can do this in z80 assembly with something like "ld (ix-24),(hl)", although ix and hl are only 16 bit registers.
+		Yes I have previous experience in assembly; I've even made a game in z80 asm on a TI-84+SE after I taught myself the language.
+
+leaq ($0x12,%rcx),%rdx
+	$0x12 must be a 64-bit register
+
+leaq (%rcx,%rax,3),%rax
+	The 3 must be either a 1, 2, 4, or 8.
+
+addq %rax,$0x13
+	$0x13 must be a register or an address
+

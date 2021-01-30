@@ -1,0 +1,4 @@
+hippo -> prog_c.c
+koala -> prog_d.c
+rhino -> prog_a.c
+zebra -> prog_b.c

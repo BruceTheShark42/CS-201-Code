@@ -1,0 +1,30 @@
+addl %edx,%eax
+	A: Adds register %edx to register %eax.
+	B: The data is registers %eax and %edx.
+	C: The result is put in register %eax.
+	D: 32 bits
+
+movw $0x64,(%rcx)
+	A: Move $0x64 into memory at the address in register %rcx.
+	B: The data is a constant 0x64 and the address in register %rcx.
+	C: The result is put in memory at the address.
+	D: 16 bits
+
+leaq -0x18(%rbp,%rdx,2),%rax
+	A: Calculates and stores -0x18 + %rbp + %rdx * 2 in register %rax.
+	B: The data are constants -0x18 and 2, and registers %rbp and %rdx.
+	C: The result is put in register %rax.
+	D: 64 bits
+
+idiv $0x3
+	A: Divides %rax by $0x3; puts the quotient in %rax and the remainder in %rdx.
+	B: The data is a constant $0x3 and register %rax.
+	C: The results are put in %rax and %rdx.
+	D: 64 bits
+
+movb %cl,-0x18(%rax)
+	A: Move register %cl into memory at the address in register %rax plus -0x18 bytes.
+	B: The data is a constant -0x18 and registers %cl and %rax.
+	C: The result is put in memory at the address.
+	D: 8 bits
+
