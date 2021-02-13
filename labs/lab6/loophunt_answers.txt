@@ -1,0 +1,52 @@
+void loop4(unsigned long x) {
+	while (x > 100) {
+		x -= 2;
+	}
+}
+
+void loop10(unsigned long x) {
+	for (unsigned long i = 100; i > x; i--);
+}
+
+void loop2(unsigned long x) {
+	while (x < 100) {
+		x++;
+	}
+}
+
+void loop7(unsigned long x) {
+	for (; x < 100; x += 2);
+}
+
+void loop1(unsigned long x) {
+	while (x > 100) {
+		x--;
+	}
+}
+
+void loop5(unsigned long x) {
+	do {
+		x -= 2;
+	} while (x > 100);
+}
+
+void loop9(unsigned long x) {
+	for (unsigned long i = 0; i < x; i++);
+}
+
+void loop8(unsigned long x) {
+	for(; x > 100; x--);
+}
+
+void loop3(unsigned long x) {
+	while (x < 100) {
+		x += 2;
+	}
+}
+
+void loop6(unsigned long x) {
+	do {
+		x += 2;
+	} while (x < 100);
+}
+
