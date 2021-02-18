@@ -1,0 +1,9 @@
+1) Function A has 3 parameters.
+2) Function B has 8 parameters.
+3) Types of parameters in function A are:
+	int, long, int
+4) The return type of function A is int.
+5) The return type of function B is long.
+6) Calculating the index into a 1D array with 2D coordinates from the right to left instead of from left to right:
+	the standard is "index = width * y + x", except this is doing "index = width * y - x"
+7) Calculating the dot product of two 4D vectors.

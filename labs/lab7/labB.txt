@@ -1,0 +1,23 @@
+Function 1:
+	x offset: -4 bytes
+	memory space: 4 bytes
+
+Function 2:
+	x offset: -20 bytes
+	y offset: -2 bytes
+	memory space: 20 bytes
+
+Function 3:
+	x offset: -20 bytes
+	y offset: -32 bytes
+	a offset: -5 bytes
+	z offset: -4 bytes
+	memory space: 32 bytes
+
+Function 4:
+	x offset: -4 byte
+	y offset: -8 bytes
+	z offset: -16 bytes
+	w offset: -20 bytes
+	memory space: 20 bytes
+

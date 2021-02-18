@@ -1,0 +1,82 @@
+
+functions.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <functA>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	89 7d ec             	mov    %edi,-0x14(%rbp)
+   7:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+   b:	89 55 e8             	mov    %edx,-0x18(%rbp)
+   e:	48 8b 45 e0          	mov    -0x20(%rbp),%rax
+  12:	89 c2                	mov    %eax,%edx
+  14:	8b 45 ec             	mov    -0x14(%rbp),%eax
+  17:	0f af d0             	imul   %eax,%edx
+  1a:	8b 45 e8             	mov    -0x18(%rbp),%eax
+  1d:	29 c2                	sub    %eax,%edx
+  1f:	89 d0                	mov    %edx,%eax
+  21:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  24:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  27:	5d                   	pop    %rbp
+  28:	c3                   	retq   
+
+0000000000000029 <functB>:
+  29:	55                   	push   %rbp
+  2a:	48 89 e5             	mov    %rsp,%rbp
+  2d:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  31:	48 89 75 e0          	mov    %rsi,-0x20(%rbp)
+  35:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+  39:	48 89 4d d0          	mov    %rcx,-0x30(%rbp)
+  3d:	4c 89 45 c8          	mov    %r8,-0x38(%rbp)
+  41:	4c 89 4d c0          	mov    %r9,-0x40(%rbp)
+  45:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  49:	48 0f af 45 e0       	imul   -0x20(%rbp),%rax
+  4e:	48 89 c2             	mov    %rax,%rdx
+  51:	48 8b 45 d8          	mov    -0x28(%rbp),%rax
+  55:	48 0f af 45 d0       	imul   -0x30(%rbp),%rax
+  5a:	48 01 c2             	add    %rax,%rdx
+  5d:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+  61:	48 0f af 45 c0       	imul   -0x40(%rbp),%rax
+  66:	48 01 c2             	add    %rax,%rdx
+  69:	48 8b 45 10          	mov    0x10(%rbp),%rax
+  6d:	48 0f af 45 18       	imul   0x18(%rbp),%rax
+  72:	48 01 d0             	add    %rdx,%rax
+  75:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  79:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  7d:	5d                   	pop    %rbp
+  7e:	c3                   	retq   
+
+000000000000007f <main>:
+  7f:	55                   	push   %rbp
+  80:	48 89 e5             	mov    %rsp,%rbp
+  83:	48 83 ec 10          	sub    $0x10,%rsp
+  87:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+  8e:	48 c7 45 f8 00 00 00 	movq   $0x0,-0x8(%rbp)
+  95:	00 
+  96:	ba 36 00 00 00       	mov    $0x36,%edx
+  9b:	be 21 00 00 00       	mov    $0x21,%esi
+  a0:	bf 0c 00 00 00       	mov    $0xc,%edi
+  a5:	e8 00 00 00 00       	callq  aa <main+0x2b>
+  aa:	89 45 f4             	mov    %eax,-0xc(%rbp)
+  ad:	6a 08                	pushq  $0x8
+  af:	6a 07                	pushq  $0x7
+  b1:	41 b9 06 00 00 00    	mov    $0x6,%r9d
+  b7:	41 b8 05 00 00 00    	mov    $0x5,%r8d
+  bd:	b9 04 00 00 00       	mov    $0x4,%ecx
+  c2:	ba 03 00 00 00       	mov    $0x3,%edx
+  c7:	be 02 00 00 00       	mov    $0x2,%esi
+  cc:	bf 01 00 00 00       	mov    $0x1,%edi
+  d1:	e8 00 00 00 00       	callq  d6 <main+0x57>
+  d6:	48 83 c4 10          	add    $0x10,%rsp
+  da:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  de:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  e2:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  e5:	89 c6                	mov    %eax,%esi
+  e7:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # ee <main+0x6f>
+  ee:	b8 00 00 00 00       	mov    $0x0,%eax
+  f3:	e8 00 00 00 00       	callq  f8 <main+0x79>
+  f8:	b8 00 00 00 00       	mov    $0x0,%eax
+  fd:	c9                   	leaveq 
+  fe:	c3                   	retq   
