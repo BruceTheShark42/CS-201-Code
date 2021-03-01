@@ -1,0 +1,70 @@
+Problem 1:
+	Predictions:
+		red blue:
+			child prints "red" and becomes a zombie
+			parent prints "blue" then reaps child and terminates
+		blue:
+			parent prints "blue" then reaps child before it can print "red" and terminates
+		blue red:
+			parent prints "blue", then in between that and wait(NULL), child prints "red", then parent reaps child and terminates
+	
+	I should've realized that the child process isn't in the wait set if the parent calls
+	wait before the child terminates. Other than that, I believe I was correct.
+
+Problem 2:
+	Predictions:
+		red yellow blue green
+		
+		red blue yellow green
+		red blue green yellow
+		
+		blue green red yellow
+		
+		blue red green yellow
+		blue red yellow green
+	
+	I was completely correct.
+
+Problem 3:
+	Predictions:
+		red yellow yellow blue green green
+		
+		red yellow blue yellow green green
+		red yellow blue green yellow green
+		red yellow blue green green yellow
+		
+		red blue yellow yellow green green
+		red blue yellow green yellow green
+		red blue yellow green green yellow
+		
+		red blue green yellow yellow green
+		red blue green yellow green yellow
+		red blue green green yellow yellow
+		
+		... it's only half over, too... many... combinations...
+		
+		blue green green red yellow yellow
+		
+		blue green red green yellow yellow
+		blue green red yellow green yellow
+		blue green red yellow yellow green
+		
+		blue red green green yellow yellow
+		blue red green yellow green yellow
+		blue red green yellow yellow green
+		
+		blue red yellow green green yellow
+		blue red yellow green yellow green
+		blue red yellow yellow green green
+	
+	Okay, I might have overestimated how many combinations there are.
+	The way I see it is technically, there's a very small chance of
+	most of them happenning. For example:
+		parent forks child1
+		child1 forks child2
+		child1 runs srand
+		kernel takes control and updates timing
+		child2 runs srand **with different time than child1 because kernel changed it (this is insanely unlikely)** which results in a different sleep time.
+	I don't know the implementation details for C's time function nor
+	how operating systems handle timing, so I can't say if this is
+	even possible or not.
