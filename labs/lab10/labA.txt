@@ -1,0 +1,4 @@
+2) countAllVowels takes the longest to run.
+3) Average: 116.008s
+4) Average: 0.292s, Factor: 397.562
+5) Average: 0.197s, Factor: 1.485

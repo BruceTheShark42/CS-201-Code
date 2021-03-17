@@ -1,0 +1,2 @@
+2) Average: 26.627s
+3) Average: 1.561s, Factor: 17.054
